@@ -1,0 +1,61 @@
+apply plugin:  'jacoco'
+
+jacoco {
+    toolVersion = "0.8.5"
+}
+
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
+    jacoco.excludes = ['jdk.internal.*']
+}
+
+task fullCoverageReport(type: JacocoReport) {
+    dependsOn 'createDebugCoverageReport'
+    dependsOn 'testDebugUnitTest'
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+
+    def fileFilter = [
+            '**/BR.*',
+            '**/R.class',
+            '**/R$*.class',
+            '**/BuildConfig.*',
+            '**/Manifest*.*',
+            '**/*Test*.*',
+            'android/**/*.*',
+            '**/*Activity*.*',
+            '**/*Fragment*.*',
+            '**/*Adapter*.*',
+            '**/*ViewPager*.*',
+            '**/*ViewHolder*.*',
+            '**/*Module*.*',
+            '**/*DBTable*.*',
+            '**/**/*RoomOpenHelper*.*',
+            '**/*_MembersInjector.*',
+            '**/Dagger*Component.*',
+            '**/Dagger*Component$Builder.*',
+            '**/*Module_*Factory.*',
+            '**/*Hilt*.*',
+            '**/*_*Factory.class',
+            '**/*ComponentImpl.*',
+            '**/*SubComponentBuilder.*',
+            '**/databinding/**/*.*',
+            '**/**/*DataBinding*.*',
+            '**/**/DataBinderMapperImpl*.*',
+            '**/com/vdc/assignment/repository/db/*.*',
+            '**/com/vdc/assignment/utils/*.*',
+            '**/com/vdc/assignment/generated/callback/**/*.*'
+    ]
+    def javaClasses = fileTree(dir: "${buildDir}/intermediates/javac/debug", excludes: fileFilter)
+    def kotlinClasses = fileTree(dir: "${buildDir}/tmp/kotlin-classes/debug", excludes: fileFilter)
+    def mainSrc = "${project.projectDir}/src/main/java"
+
+    getClassDirectories().setFrom(files([javaClasses, kotlinClasses]))
+    getSourceDirectories().setFrom(files([mainSrc]))
+    getExecutionData().setFrom(fileTree(dir: "$buildDir", includes: [
+            "jacoco/testDebugUnitTest.exec",
+            "outputs/code-coverage/connected/*coverage.ec"
+    ]))
+}

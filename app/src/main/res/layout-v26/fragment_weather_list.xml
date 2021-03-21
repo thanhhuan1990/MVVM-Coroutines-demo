@@ -25,31 +25,38 @@
             android:id="@+id/searchEdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/padding_small"
             android:layout_margin="@dimen/margin_small"
+            android:autoSizeMaxTextSize="@dimen/autoSizeMaxTextSize"
+            android:autoSizeMinTextSize="@dimen/autoSizeMinTextSize"
+            android:autoSizeStepGranularity="@dimen/autoSizeStepGranularity"
+            android:autoSizeTextType="uniform"
             android:hint="@string/search_hint"
+            android:paddingHorizontal="@dimen/padding_small"
             android:textColorHint="@color/gray_text_color"
-            android:textSize="@dimen/_14ssp" />
+            android:textSize="@dimen/_14sdp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/get_weather"
-            android:textAllCaps="false"
-            android:contentDescription="@string/talkBack_searching"
+            android:layout_marginStart="@dimen/margin_small"
+            android:autoSizeMaxTextSize="@dimen/autoSizeMaxTextSize"
+            android:autoSizeMinTextSize="@dimen/autoSizeMinTextSize"
+            android:autoSizeStepGranularity="@dimen/autoSizeStepGranularity"
+            android:autoSizeTextType="uniform"
             android:enabled="false"
+            android:contentDescription="@string/talkBack_searching"
             android:onClick="@{() -> viewModel.searchWeather(searchEdt.getText().toString())}"
-            android:textSize="@dimen/_12ssp" />
+            android:text="@string/get_weather"
+            android:textAllCaps="false" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:importantForAccessibility="no"
-            android:overScrollMode="always"
             android:orientation="vertical"
+            android:overScrollMode="always"
             android:paddingBottom="@dimen/margin_normal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="7"

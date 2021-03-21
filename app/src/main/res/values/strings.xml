@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Weather Forecast</string>
     <string name="get_weather">Get Weather</string>
+
+    <string name="date">Date: %s</string>
+    <string name="avgTemp">Average temperature: %s\u2103</string>
+    <string name="pressure">Pressure: %d</string>
+    <string name="humidity">Humidity: %d%%</string>
+    <string name="description">Description: %s</string>
+
+    <string name="talkBack_forecast">Date: %s, Average temperature: %d degrees celsius, pressure: %d, humidity: %d%%, Description: %s</string>
+    <string name="search_hint">Input Text to Search by City</string>
+    <string name="talkBack_searching">Searching</string>
 </resources>
