@@ -1,7 +1,7 @@
 package com.vdc.assignment.repository.net.repository
 
 import com.vdc.assignment.model.WeatherResponse
-import com.vdc.assignment.repository.net.Result
+import com.vdc.assignment.repository.Result
 
 
 /**
@@ -9,6 +9,6 @@ import com.vdc.assignment.repository.net.Result
  *
  * Copyright © 2021 Huan.Huynh. All rights reserved.
  */
-interface WeatherRepository {
+interface RemoteDataRepository {
     suspend fun getWeather(searchKey: String, appId: String): Result<WeatherResponse?>
 }

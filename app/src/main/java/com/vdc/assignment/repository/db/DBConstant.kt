@@ -13,6 +13,4 @@ object DBConstant {
     // table name
     const val TABLE_FORECAST = "table_forecast"
     const val TABLE_RESULT = "table_result"
-    const val TABLE_WEATHER = "table_weather"
-    const val TABLE_TEMP = "table_temp"
 }

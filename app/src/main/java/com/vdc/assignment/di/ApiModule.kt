@@ -1,9 +1,11 @@
 package com.vdc.assignment.di
 
 import com.vdc.assignment.BuildConfig
+import com.vdc.assignment.repository.WeatherRepository
+import com.vdc.assignment.repository.WeatherRepositoryImpl
 import com.vdc.assignment.repository.net.OpenWeatherApi
-import com.vdc.assignment.repository.net.repository.WeatherRepository
-import com.vdc.assignment.repository.net.repository.WeatherRepositoryImpl
+import com.vdc.assignment.repository.net.repository.RemoteDataRepository
+import com.vdc.assignment.repository.net.repository.RemoteDataRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -51,9 +53,13 @@ class ApiModule {
 
     @Provides
     @Singleton
-    fun provideOpenWeatherApi(retrofit: Retrofit) = retrofit.create(OpenWeatherApi::class.java)
+    fun provideOpenWeatherApi(retrofit: Retrofit): OpenWeatherApi = retrofit.create(OpenWeatherApi::class.java)
 
     @Provides
     @Singleton
-    fun provideOpenWeatherRepository(repository: WeatherRepositoryImpl): WeatherRepository = repository
+    fun provideOpenWeatherRepository(repository: RemoteDataRepositoryImpl): RemoteDataRepository = repository
+
+    @Provides
+    @Singleton
+    fun provideWeatherRepository(repository: WeatherRepositoryImpl): WeatherRepository = repository
 }

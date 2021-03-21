@@ -3,6 +3,7 @@ package com.vdc.assignment.repository.net
 import com.google.gson.GsonBuilder
 import com.vdc.assignment.model.ErrorData
 import com.vdc.assignment.model.OpenWeatherException
+import com.vdc.assignment.repository.Result
 import retrofit2.Response
 
 

@@ -1,14 +1,13 @@
 package com.vdc.assignment.ui.main
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vdc.assignment.BuildConfig
 import com.vdc.assignment.model.ForecastData
-import com.vdc.assignment.repository.net.Result.Status
-import com.vdc.assignment.repository.net.repository.WeatherRepository
+import com.vdc.assignment.repository.Result.Status
+import com.vdc.assignment.repository.WeatherRepository
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

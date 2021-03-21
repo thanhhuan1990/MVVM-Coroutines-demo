@@ -1,6 +1,4 @@
-package com.vdc.assignment.repository.net
-
-import java.lang.Exception
+package com.vdc.assignment.repository
 
 /**
  * Created by Huan.Huynh on 18/03/2021
