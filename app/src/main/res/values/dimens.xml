@@ -6,4 +6,8 @@
     <dimen name="margin_small">8dp</dimen>
     <dimen name="padding_small">4dp</dimen>
 
+    <dimen name="autoSizeMaxTextSize">18sp</dimen>
+    <dimen name="autoSizeMinTextSize">11sp</dimen>
+    <dimen name="autoSizeStepGranularity">1sp</dimen>
+
 </resources>
