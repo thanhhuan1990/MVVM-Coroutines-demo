@@ -4,8 +4,8 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.nhaarman.mockitokotlin2.*
 import com.vdc.assignment.model.*
-import com.vdc.assignment.repository.net.Result
-import com.vdc.assignment.repository.net.repository.WeatherRepository
+import com.vdc.assignment.repository.Result
+import com.vdc.assignment.repository.WeatherRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
