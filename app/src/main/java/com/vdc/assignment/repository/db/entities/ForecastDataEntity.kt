@@ -1,6 +1,7 @@
 package com.vdc.assignment.repository.db.entities
 
 import androidx.room.Entity
+import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import com.vdc.assignment.model.ForecastData
 import com.vdc.assignment.model.Temp
@@ -12,7 +13,15 @@ import com.vdc.assignment.repository.db.DBConstant
  *
  * Copyright © 2021 Huan.Huynh. All rights reserved.
  */
-@Entity(tableName = DBConstant.TABLE_FORECAST)
+@Entity(
+        tableName = DBConstant.TABLE_FORECAST,
+        foreignKeys = [ForeignKey(
+                entity = ResultEntity::class,
+                parentColumns = arrayOf("id"),
+                childColumns = arrayOf("resultId"),
+                onDelete = ForeignKey.CASCADE
+        )]
+)
 data class ForecastDataEntity(
     val resultId: Long,
     val date : Long,
