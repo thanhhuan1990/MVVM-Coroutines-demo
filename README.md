@@ -1,4 +1,4 @@
-# VDC-Assignment
+# MVVM + Coroutines + Retrofit + Room Demo
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development
@@ -34,7 +34,7 @@ I decided to use Kotlin sparingly at first (think POJOs, Helpers), then moved on
     * Lifecycle-aware components perform actions in response to a change in the lifecycle status of another component, such as activities and fragments.
 
 ### Components Diagram
-![VDC-Assignment](https://user-images.githubusercontent.com/11939679/111912417-0185a880-8a9c-11eb-80a4-1b29fb78a4b9.png)
+![Architecture](https://user-images.githubusercontent.com/11939679/111912417-0185a880-8a9c-11eb-80a4-1b29fb78a4b9.png)
 
 ### ER Diagram
 ![Database ER diagram (crow's foot)](https://user-images.githubusercontent.com/11939679/111912432-19f5c300-8a9c-11eb-8c7b-0d2b1764ba42.png)
